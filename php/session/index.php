@@ -15,7 +15,7 @@
 			}else{
 				$_SESSION['lastvisitedpage']=$_SERVER['REQUEST_URI'];
 				$_SESSION['message']="Time out";
-				header('Location: http://localhost/phpprac/login.php');
+				header('Location: http://localhost/reference/php/session/login.php');
 				exit();
 			}
 		}
@@ -25,7 +25,7 @@
 		//flash message after login
 		if(isset($_SESSION['message'])){
 			echo "<b>Login Success</b>";
-			unset $_SESSION['message'];
+			unset ($_SESSION['message']);
 
 		}
 		

@@ -42,14 +42,14 @@
 					if(isset($_SESSION['lastvisitedpage'])){
 						$url=$_SESSION['lastvisitedpage'];
 					}else{
-						$url="/phpprac/homepage.php";
+						$url="/reference/php/session/index.php";
 					}
 				
 					echo "<p>Login successfull</p>";
 
 					$_SESSION['message']="Login Successfull";
 					$_SESSION['lastactivitytime']=time();
-						header('Location: http://localhost'.$url);
+					header('Location: http://localhost'.$url);
 					
 					
 				}else{
