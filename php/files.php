@@ -40,7 +40,8 @@
 				header("Content-length: '50mb'");
 				header("Content-type: 'php'");
 				header("Content-Disposition: attachment; filename='testing.php'");
-				echo $data['file_content'];				
+				echo $data['file_content'];		
+				exit();
 		}else{
 			echo "Error";
 		}
