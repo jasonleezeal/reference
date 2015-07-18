@@ -22,7 +22,7 @@
 	
 	
 	if(isset($_GET['downloaddb'])){
-		$sql = "SELECT * FROM files WHERE id=3";
+		$sql = "SELECT * FROM files WHERE id=10";
 		$stmt = $conn->prepare($sql);
 		
 		if($stmt->execute()){
@@ -39,7 +39,7 @@
 				//echo $data[0]; all	
 				header("Content-length: '50mb'");
 				header("Content-type: 'php'");
-				header("Content-Disposition: attachment; filename='testing.php'");
+				header("Content-Disposition: attachment; filename='testing.jpg'");
 				echo $data['file_content'];		
 				exit();
 		}else{
@@ -77,11 +77,12 @@
 			$uploadOk = 0;
 		}
 		// Allow certain file formats
+		/*
 		$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 		if($imageFileType != "php" ) {
 			echo "Sorry, only PHP files are allowed.";
 			$uploadOk = 0;
-		}
+		}*/
 		// Check if $uploadOk is set to 0 by an error
 		if ($uploadOk == 0) {
 			echo "Sorry, your file was not uploaded.";
@@ -98,13 +99,13 @@
 	}
 	if(isset($_GET['file'])){
 			
-			$file = basename($_GET['file']);
-			$file = 'files/'.$file;
+			$filename = basename($_GET['file']);
+			$file = 'files/'.$filename;
 			
 	
 			header("Cache-Control: public");
 			header("Content-Description: File Transfer");
-			header("Content-Disposition: attachment; filename=$file");
+			header("Content-Disposition: attachment; filename=$filename");
 			header("Content-Type: application/zip");
 			header("Content-Transfer-Encoding: binary");
 
@@ -133,4 +134,4 @@
 			<input type="file" name="fileToUpload" id="fileToUpload">
 			<input type="submit" value="submit" name="submitws">
 		</form>
-	<a href="files.php?file=cakephp.php">Download Here</a>
+	<a href="files.php?file=testing.jpg">Download Here</a>
