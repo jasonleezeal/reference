@@ -18,55 +18,98 @@
 		
 	</head>
 	
-	
-	
-	<style>
-	
-		body{
+	<script>
+		function validationform(){
+			var namefield = document.forms['userform']['name'].value;
 			
-			margin:0;
-			padding:0;
 		
-		
-		}
-		div{
-			border:1px solid black;
-		
-		}
-		div#main{
+			if( namefield == "" ){
+				document.getElementById('errorlist').innerHTML  = "<li>name cannot leave empty</li>";
+				//document.getElementById('name').style.border="yellow";	
+								
+				return false;
 			
-			width:800px;
-			margin:0 auto;
-			height:100%;
-		
-		}
-		div#main-top{
+			}
+			var addressField = document.forms['userform']['address'].value;
 			
-			height:20%;
-			width:100%;
-		}
-		div#main-content{
 		
-			height:80%;
-			width:100%;
-		}
-		div#main-bottom{
+			if( addressField == "" ){
+				document.getElementById('errorlist').innerHTML  = "<li>Address cannot leave empty</li>";
+				//document.getElementById('name').style.border="yellow";	
+							
+				return false;
+			
+			}
+			var transportField = document.getElementById("vehicle").checked;
 		
-			height:20%;
-			width:100%;
+			if(transportField == false){
+				
+				document.getElementById("errorlist").innerHTML = "<li>Please select one vehicle</li>";
+				return false;
+			}
+			var countryField = document.getElementById("country").value;
+		
+			if(countryField == 0){
+				
+				document.getElementById("errorlist").innerHTML = "<li>Please select one country</li>";
+				return false;
+			}
 		}
+	</script>
 	
-	</style>
+	
 
 	<body>
-		<div id="main">
-			<div id="main-top">
-			</div>
-        	<div id="main-content">
-			</div>
-			<div id="main-bottom">
-			</div>
+		<h2>Javascript Validation</h2>
+		<div id = "errorlist">
+		
 		</div>
+		<form name="userform" onsubmit="return validationform();" >
+			Name
+			<input type = "text" name ="name" id="name">
+			<br>
+			Address
+			<textarea name = "address"></textarea>
+			<br>
+			Gender
+			<input type = "radio" name="gender" id="gender" value="male" checked>
+			<input type = "radio" name="gender" id="gender" value="female">
+			<br>
+			Country 
+			<select name="country" id="country">
+				<option value="0" selected="selected" disabled >Select 1</option>
+				<option value="1" >Malaysia</option>
+				<option value="2" >Singapore</option>
+			</select>
+			<br>
+			
+			File 
+			<input type="file" name="uploadfile">
+			<br>
+			
+			
+			Transport
+			
+			<input type="checkbox" name="vehicle" id="vehicle" value="Bike"> I have a bike
+			
+			<input type="checkbox" name="vehicle" id="vehicle" value="Car"> I have a car 
+			<br>
+			date 
+			<input type="date" name="datepicker">
+			<br>
+			range
+			  <input type="range" name="points" min="0" max="10">
+
+			
+			<br>
+			
+			
+			
+			
+			<br>
+			<input type = "submit" name="submit" value="submit" >
+			
+		</form>
 
 		
 	</body>
