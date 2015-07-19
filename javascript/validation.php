@@ -20,40 +20,47 @@
 	
 	<script>
 		function validationform(){
-			var namefield = document.forms['userform']['name'].value;
-			
 		
+			// TEXT 
+			var namefield = document.forms['userform']['name'].value;
 			if( namefield == "" ){
 				document.getElementById('errorlist').innerHTML  = "<li>name cannot leave empty</li>";
-				//document.getElementById('name').style.border="yellow";	
-								
-				return false;
-			
+				//document.getElementById('name').style.border="yellow";						
+				return false;	
 			}
-			var addressField = document.forms['userform']['address'].value;
 			
-		
+			var addressField = document.forms['userform']['address'].value;
 			if( addressField == "" ){
 				document.getElementById('errorlist').innerHTML  = "<li>Address cannot leave empty</li>";
-				//document.getElementById('name').style.border="yellow";	
-							
+				//document.getElementById('name').style.border="yellow";					
 				return false;
+			}
+			// END TEXT FIELD
 			
+			
+			// CHECKBOX 
+			var transportField = document.getElementsByName("vehicle");
+			var transportFieldchecked = false;
+			for(var i=0;i<transportField.length;i++){
+				if( transportField[i].checked){
+					transportFieldchecked=true;
+					break;
+				}					
 			}
-			var transportField = document.getElementById("vehicle").checked;
-		
-			if(transportField == false){
-				
-				document.getElementById("errorlist").innerHTML = "<li>Please select one vehicle</li>";
+			if(transportFieldchecked == false){
+				document.getElementById("errorlist").innerHTML = "<li>Please select one vehicle</li>";	
 				return false;
 			}
+			// END CHECKBOX FIELD
+			
+			// SELECT 
 			var countryField = document.getElementById("country").value;
-		
 			if(countryField == 0){
 				
 				document.getElementById("errorlist").innerHTML = "<li>Please select one country</li>";
 				return false;
 			}
+			// END SELECT FIELD
 		}
 	</script>
 	
