@@ -6,9 +6,10 @@
 	<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.3.min.js"></script>
 </head>
 <script>
+/*
 	$(document).ready(function(){
 		$("#two-content").hide();
-		$("#three-content").hide();
+	$("#three-content").hide();
 		$("#two").click(function(){
 			$("#two-content").fadeIn(1000);
 			$("#one-content").hide();
@@ -26,6 +27,19 @@
 		});
 	
 	});
+
+*/
+$(document).ready(function(){
+	$(".show-content").hide();
+	$(".show-content").hide();
+	$("#one-content").show();
+
+	$(".button").click(function(){
+		$(".show-content").hide();
+		$("#"+$(this).attr('id')+"-content").fadeIn();
+		//$("#"+$(this).attr('id')+"-content").show();
+	});
+});
 
 </script>
 
