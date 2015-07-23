@@ -27,16 +27,16 @@
 		
 		if($stmt->execute()){
 			$result = $stmt->get_result();
-			//$data = $result->fetch_all(MYSQLI_ASSOC); 
-			$data = $result->fetch_assoc();
+			//$data = $result->fetch_all(MYSQLI_ASSOC); //all
+			$data = $result->fetch_assoc(); //first
 			//$data = $result->fetch_row(); count
-				/*
+				/* 
 				foreach($data as $row){
-					echo $row['file_content']."<br><br>";
+					echo $row['file_content']."<br><br>"; //all
 				}
 				*/
 				//echo $data['file_content']; first
-				//echo $data[0]; all	
+				//echo $data[0]; count	
 				header("Content-length: '50mb'");
 				header("Content-type: 'php'");
 				header("Content-Disposition: attachment; filename='testing.jpg'");

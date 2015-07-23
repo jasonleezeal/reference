@@ -32,6 +32,7 @@
 	img{
 		vertical-align:middle;
 		height:100%;
+		
 	}
 
 </style>
