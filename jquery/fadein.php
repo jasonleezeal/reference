@@ -6,7 +6,7 @@
 	<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.3.min.js"></script>
 </head>
 <script>
-/*
+
 	$(document).ready(function(){
 		$("#two-content").hide();
 	$("#three-content").hide();
@@ -28,7 +28,7 @@
 	
 	});
 
-*/
+/*
 $(document).ready(function(){
 	$(".show-content").hide();
 	$(".show-content").hide();
@@ -40,7 +40,7 @@ $(document).ready(function(){
 		//$("#"+$(this).attr('id')+"-content").show();
 	});
 });
-
+*/
 </script>
 
 <style>

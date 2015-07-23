@@ -36,6 +36,7 @@
 		}
 		.mainmenu{
 			display: inline-block;
+			position:relative;
 		}
 		ul{
 			border:1px solid black;
@@ -61,16 +62,33 @@
 		/* ul child */
 		.mainmenu ul{
 			
+			
 			margin-top:5px;
-			margin-left:-6px;
-			display:none;
 			position:absolute;
+			display:none;
+			left:0px;
+			width:100%;
+			
 		}
 		
 		.mainmenu li:hover ul{
 			display:block;
+			
+		}
+		.mainmenu ul li:hover li{
+			
 		}
 		
+		
+		a{
+			display:block;
+		
+		}
+		
+		a:hover{
+			background-color:blue;
+			
+		}
 
 		
 	</style>
@@ -88,8 +106,8 @@
 					</ul>
 				</li>
 				<li><a href="#">HOME</a>
-					<ul>	
-						<li><a href="#">Heel2222222222222222o</a></li>
+					<ul >	
+						<li><a href="#">Hsadsad</a></li>
 						<li><a href="#">Heelo</a></li>
 					</ul>
 				</li>
