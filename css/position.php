@@ -37,6 +37,7 @@
 		height:250px;
 		position:absolute;
 		right:0px;
+	
 	}
 	</style>
 
