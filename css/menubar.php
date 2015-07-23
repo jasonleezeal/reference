@@ -21,15 +21,18 @@
 	
 	
 	<style>
-		#mainmenu a{
-			text-decoration:none;
+		body{
+			font-family:Monospace;
+			font-size:20px;
+		}
+		.menu{
+			margin-top:100px;
 		
 		}
 		
-		
 		div{
 
-			background-color:red;
+			background-color:black;
 			border:1px solid black;
 			text-align:center;
  
@@ -47,8 +50,8 @@
 			
 		}
 		li{
-			border:1px solid black;
-			padding:5px;
+		
+			
 
 		}
 		
@@ -63,33 +66,45 @@
 		.mainmenu ul{
 			
 			
-			margin-top:5px;
+			
 			position:absolute;
 			display:none;
 			left:0px;
 			width:100%;
+			background-color:black;
 			
 		}
 		
 		.mainmenu li:hover ul{
 			display:block;
 			
-		}
-		.mainmenu ul li:hover li{
-			
-		}
 		
-		
+		}
+	
+
 		a{
 			display:block;
-		
+			padding:10px;
+			color:white;
+			text-decoration:none;
 		}
-		
+		.mainmenu li>a::after{
+			content:' \25BE';
+		}
 		a:hover{
-			background-color:blue;
+			background-color:white;
+			color:black;
+			
 			
 		}
-
+		img{
+			top:75px;
+			float:left;
+			height:100px;
+			z-index:1;
+			left:300px;
+			position:absolute;
+		}
 		
 	</style>
 	
@@ -97,21 +112,23 @@
 	
 	
 	<body>
+	<img src="\reference\css\image\Penguins.jpg">
 		<div class="menu">
+		
 			<ul class="mainmenu">	
-				<li><a href="#">HOM22222222E</a>
+				<li><a href="#">Home</a>
 					<ul>	
-						<li><a href="#">Heelo</a></li>
+						<li><a href="#">Test</a></li>
 						<li><a href="#">Heelossssssss</a></li>
 					</ul>
 				</li>
-				<li><a href="#">HOME</a>
+				<li><a href="#">About Us</a>
 					<ul >	
 						<li><a href="#">Hsadsad</a></li>
 						<li><a href="#">Heelo</a></li>
 					</ul>
 				</li>
-				<li><a href="#">HOMEss</a>
+				<li><a href="#">Product</a>
 					<ul>	
 						<li><a href="#">Heel2222222222222222o</a></li>
 						<li><a href="#">Heelo</a></li>
